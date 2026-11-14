@@ -224,7 +224,7 @@ a {
 
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.3fr 0.9fr;
+  grid-template-columns: 1.55fr 0.85fr;
   align-items: center;
   gap: 3.5rem;
 }
@@ -236,29 +236,31 @@ a {
 
 .hero-super-title {
   font-family: var(--font-heading);
-  font-size: clamp(3.8rem, 7vw, 6.2rem);
+  font-size: clamp(4.6rem, 8vw, 7.6rem);
   font-weight: 400;
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.06em;
   color: var(--primary);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.4rem;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .hero-artist-name {
   font-family: var(--font-label);
-  font-size: clamp(1rem, 1.8vw, 1.35rem);
+  font-size: clamp(1.15rem, 1.85vw, 1.55rem);
   font-weight: 500;
-  letter-spacing: 0.25em;
+  letter-spacing: 0.46em;
   color: var(--on-surface);
   text-transform: uppercase;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  white-space: nowrap;
 }
 
 .hero-meta {
   font-family: var(--font-label);
   font-size: 11px;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--on-surface-variant);
 }
@@ -614,6 +616,390 @@ a {
 @media (max-width: 600px) {
   .gallery-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   MUSEUM PAGE STYLES (EXHIBITION CATALOG)
+   ========================================================================== */
+.museum-page {
+  padding: 3rem 0 5rem 0;
+}
+
+.museum-header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--outline-hairline);
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.museum-header-left {
+  max-width: 720px;
+}
+
+.museum-main-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 500;
+  color: var(--primary);
+  line-height: 1.15;
+  margin: 0.4rem 0 0.8rem 0;
+  text-transform: uppercase;
+}
+
+.museum-desc {
+  font-family: var(--font-body);
+  font-size: 18px;
+  color: var(--on-surface-variant);
+  line-height: 1.6;
+}
+
+.museum-header-badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: flex-end;
+}
+
+.museum-badge-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--surface-low);
+  border: 1px solid var(--outline-hairline);
+  padding: 0.5rem 1rem;
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--on-surface);
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--secondary);
+}
+
+.museum-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3.5rem;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.museum-search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-bottom: 1px solid var(--outline-hairline);
+  padding: 0.4rem 0.6rem;
+  font-family: var(--font-label);
+  font-size: 11px;
+  color: var(--on-surface-variant);
+}
+
+.museum-search-box input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-family: var(--font-label);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--on-surface);
+}
+
+/* EXHIBITION CARDS (ZIG-ZAG) */
+.exhibition-list {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  margin-bottom: 5rem;
+}
+
+.exhibit-card {
+  background-color: #ffffff;
+  border: 1px solid var(--outline-hairline);
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.exhibit-card:hover {
+  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.07);
+}
+
+.exhibit-visual-col {
+  width: 100%;
+}
+
+.exhibit-image-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  background-color: #f7f5f0;
+  border: 1px solid var(--outline-hairline);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.02);
+}
+
+.archive-code-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(4px);
+  padding: 4px 10px;
+  font-family: var(--font-label);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--on-surface-variant);
+  border: 1px solid var(--outline-hairline);
+  z-index: 2;
+}
+
+.exhibit-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.exhibit-card:hover .exhibit-img {
+  transform: scale(1.02);
+}
+
+.exhibit-content-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.exhibit-meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(234, 229, 219, 0.6);
+}
+
+.meta-left {
+  color: var(--secondary, #c25e3e);
+}
+
+.meta-right {
+  color: var(--on-surface-variant);
+}
+
+.exhibit-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 2.6vw, 2.6rem);
+  font-weight: 500;
+  color: var(--primary, #1a1a1a);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.25rem;
+}
+
+.exhibit-desc {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: #444746;
+  line-height: 1.75;
+  margin-bottom: 1.75rem;
+  font-style: normal;
+}
+
+.exhibit-specs-box {
+  background-color: var(--surface-low, #f5f3f0);
+  border: 1px solid var(--outline-hairline, #eae5db);
+  padding: 1.25rem 1.6rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.spec-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.spec-label {
+  font-family: var(--font-label);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--on-surface-variant, #555758);
+  text-transform: uppercase;
+}
+
+.spec-val {
+  font-family: var(--font-body);
+  font-size: 14.5px;
+  color: var(--primary, #1a1a1a);
+  line-height: 1.45;
+}
+
+.exhibit-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.btn-exhibit-inquire {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.8rem 1.4rem;
+  border: 1px solid var(--primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-exhibit-inquire:hover {
+  background-color: var(--secondary);
+  border-color: var(--secondary);
+}
+
+.btn-exhibit-dossier {
+  background: transparent;
+  color: var(--on-surface);
+  font-family: var(--font-label);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.8rem 1.2rem;
+  border: 1px solid var(--outline-hairline);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-exhibit-dossier:hover {
+  border-color: var(--primary);
+}
+
+.dossier-expand-box {
+  margin-top: 1rem;
+  padding: 0.9rem 1.2rem;
+  background-color: var(--surface-low);
+  border-left: 2px solid var(--secondary);
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--on-surface-variant);
+  line-height: 1.6;
+}
+
+/* STANDARDS OF FINE ART */
+.standards-section {
+  border-top: 1px solid var(--outline-hairline);
+  padding-top: 4.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.standards-heading {
+  font-family: var(--font-heading);
+  font-size: 1.85rem;
+  font-weight: 500;
+  color: var(--primary);
+  margin: 0.5rem 0 1rem 0;
+  line-height: 1.25;
+}
+
+.standards-desc {
+  font-family: var(--font-body);
+  font-size: 16px;
+  color: var(--on-surface-variant);
+  line-height: 1.7;
+}
+
+.standards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.standard-card {
+  background-color: #ffffff;
+  border: 1px solid var(--outline-hairline);
+  padding: 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.standard-icon-box {
+  width: 32px;
+  height: 32px;
+  background-color: #faede8;
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  font-size: 14px;
+}
+
+.standard-card-title {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.standard-card-text {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--on-surface-variant);
+  line-height: 1.6;
+}
+
+@media (max-width: 960px) {
+  .exhibit-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .standards-section {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .standards-grid {
+    grid-template-columns: 1fr;
+  }
+  .museum-header-badges {
+    align-items: flex-start;
   }
 }
 

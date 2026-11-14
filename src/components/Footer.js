@@ -17,7 +17,7 @@ function Footer() {
         <footer className="site-footer">
             <div className="site-container">
                 <div className="footer-grid">
-                    {/* Column 1: Atelier Aura Info */}
+                    {/* Column 1: Gika Studio Info */}
                     <div className="footer-col">
                         <h4 className="footer-brand-title">{FOOTER_DATA.studioInfo.title}</h4>
                         <p className="footer-desc">{FOOTER_DATA.studioInfo.description}</p>
@@ -53,9 +53,9 @@ function Footer() {
                         <p className="footer-desc">{FOOTER_DATA.gazette.description}</p>
 
                         <form className="newsletter-form" onSubmit={handleSubmit}>
-                            <input 
-                                type="email" 
-                                className="newsletter-input" 
+                            <input
+                                type="email"
+                                className="newsletter-input"
                                 placeholder={FOOTER_DATA.gazette.placeholder}
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}

@@ -18,14 +18,14 @@ const Home = () => {
 
                     <div className="hero-right">
                         <div className="hero-painting-frame">
-                            <img 
-                                src={ARTIST_INFO.heroPainting} 
-                                alt="Figurative Archive - Kyoto Studio" 
+                            <img
+                                src={ARTIST_INFO.heroPainting}
+                                alt="Figurative Archive - GIKA STUDIO"
                                 className="hero-painting-img"
                             />
                             <div className="hero-painting-captions">
                                 <span>FIGURATIVE ARCHIVE</span>
-                                <span>KYOTO STUDIO</span>
+                                <span>GIKA STUDIO</span>
                             </div>
                         </div>
                     </div>
@@ -54,10 +54,10 @@ const Home = () => {
 
                         <div className="profile-socials">
                             {ARTIST_INFO.socials.map((item, idx) => (
-                                <a 
-                                    key={idx} 
-                                    href={item.url} 
-                                    target="_blank" 
+                                <a
+                                    key={idx}
+                                    href={item.url}
+                                    target="_blank"
                                     rel="noopener noreferrer"
                                 >
                                     {item.name}

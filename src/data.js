@@ -1,7 +1,6 @@
 export const ARTIST_INFO = {
     name: "Phan Nguyen Gia Khanh",
-    studio: "Atelier Aura",
-    substudio: "Elena Vance Studio",
+    studio: "Gika Studio",
     location: "Paris & Kyoto",
     selectedWorks: "SELECTED WORKS 2021-2025",
     bio: "An analog & digital visual artist and illustrator based in Vietnam with an international practice, exploring poetic narratives, figurative studies, and contemporary visual identities.",
@@ -56,82 +55,104 @@ export const AWARDS = [
     }
 ];
 
-export const GALLERY_CATEGORIES = [
-    { key: "all", label: "ALL WORKS (18)" },
-    { key: "fine-art", label: "FINE ART" },
-    { key: "editorial", label: "EDITORIAL" },
-    { key: "monoprints", label: "MONOPRINTS" }
+export const MUSEUM_HEADER = {
+    breadcrumb: "EXHIBITION CATALOG • LƯU TRỮ",
+    title: "MUSEUM / BẢO TÀNG TÁC PHẨM",
+    description: "Bộ sưu tập tuyển chọn các tác phẩm minh họa & hội họa đương đại của Phan Nguyen Gia Khanh",
+    badges: [
+        "Archival Pigments & Fine Silk",
+        "Thời gian thực hiện: 2021 - 2025"
+    ]
+};
+
+export const MUSEUM_CATEGORIES = [
+    { key: "all", label: "TẤT CẢ TÁC PHẨM" },
+    { key: "water-ink", label: "TRANH MÀU NƯỚC & MỰC" },
+    { key: "concept", label: "MINH HỌA Ý NIỆM" },
+    { key: "exhibition", label: "TRIỂN LÃM 2021-2025" }
 ];
 
-export const GALLERY_WORKS = [
+export const MUSEUM_EXHIBITS = [
     {
         id: 1,
-        title: "Figurative Archive: The Quiet Solitude",
-        category: "fine-art",
-        year: "2024",
-        medium: "Gouache & Watercolor on Cotton Rag",
-        dimensions: "42 × 59.4 cm",
-        status: "Available",
-        image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80"
+        archiveCode: "MÃ LƯU TRỮ: TTMNK / 2024",
+        tagLeft: "TÁC PHẨM TIÊU BIỂU",
+        tagRight: "BẢN GỐC 1/1",
+        title: "DÒNG THỜI GIAN — 2024",
+        description: "Khám phá sự chuyển biến của thời gian và không gian qua những nét vẽ tinh tế, hòa quyện giữa chất liệu truyền thống và tư duy thị giác đương đại.",
+        material: "Màu nước, Gold leaf & Lụa tơ",
+        size: "50 × 120 cm (Khung gỗ)",
+        image: "/museum-art-1.jpg",
+        layout: "image-left",
+        category: "water-ink"
     },
     {
         id: 2,
-        title: "Study of Kyoto Morning Light",
-        category: "fine-art",
-        year: "2024",
-        medium: "Watercolor on Arches Paper",
-        dimensions: "30 × 40 cm",
-        status: "1/1 Original",
-        image: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9?w=800&auto=format&fit=crop&q=80"
+        archiveCode: "MÃ LƯU TRỮ: TTMNK / 2023",
+        tagLeft: "MINH HỌA Ý NIỆM",
+        tagRight: "GÌN GIỮ TRUYỀN THỐNG",
+        title: "VỌNG CẢNH — 2023",
+        description: "Sắc độ đất nung và vệt loang sơn thủy, tái hiện dòng vang an yên giữa dòng thời gian.",
+        material: "Khoáng màu & Mực nho giấy Dó",
+        size: "68 × 98 cm (Như gốc khổ)",
+        image: "/museum-art-2.jpg",
+        layout: "image-right",
+        category: "concept"
     },
     {
         id: 3,
-        title: "Poetic Narratives I: Autumn Echoes",
-        category: "editorial",
-        year: "2023",
-        medium: "Archival Pigment Print & Ink",
-        dimensions: "50 × 70 cm",
-        status: "Edition 1 of 5",
-        image: "https://images.unsplash.com/photo-1582561424760-0321d75e81fa?w=800&auto=format&fit=crop&q=80"
+        archiveCode: "MÃ LƯU TRỮ: TTMNK / 2024",
+        tagLeft: "KỸ HỌA ĐÔ THỊ DI SẢN",
+        tagRight: "PHIÊN BẢN LƯU TRỮ GIỚI HẠN",
+        title: "KÝ ỨC ĐÔ THỊ — 2024",
+        description: "Nét ký họa đan xen lớp mái ngói phố cổ, khắc họa nhịp thở hoài niệm và sức sống bền bỉ.",
+        material: "Mực sắt & Màu nước Winsor",
+        size: "70 × 100 cm (Giấy Arches 300gsm)",
+        image: "/museum-art-3.jpg",
+        layout: "image-left",
+        category: "water-ink"
     },
     {
         id: 4,
-        title: "Monoprint Specimen No. 7",
-        category: "monoprints",
-        year: "2023",
-        medium: "Oil Monotype on Mulberry Paper",
-        dimensions: "35 × 45 cm",
-        status: "Archived",
-        image: "https://images.unsplash.com/photo-1549887552-cb1071d3e5ca?w=800&auto=format&fit=crop&q=80"
-    },
-    {
-        id: 5,
-        title: "The Scholar at Ease",
-        category: "fine-art",
-        year: "2023",
-        medium: "Charcoal & Wash on Wove Paper",
-        dimensions: "29.7 × 42 cm",
-        status: "Available",
-        image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b675?w=800&auto=format&fit=crop&q=80"
-    },
-    {
-        id: 6,
-        title: "Visions of the Riverbank",
-        category: "editorial",
-        year: "2022",
-        medium: "Digital & Mixed Media Lithograph",
-        dimensions: "60 × 80 cm",
-        status: "Commissioned",
-        image: "https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?w=800&auto=format&fit=crop&q=80"
+        archiveCode: "MÃ LƯU TRỮ: TTMNK / 2025",
+        tagLeft: "TÁC PHẨM MỚI NHẤT",
+        tagRight: "TRANH LỤA ĐƯƠNG ĐẠI",
+        title: "TĨNH LẶNG BAN MAI — 2025",
+        description: "Dùng áo dài liệu không gian sớm mai trên nền lụa tơ tằm, mang nét đẹp chiêm định Á Đông.",
+        material: "Màu khoáng trên lụa tơ tằm Bảo Lộc",
+        size: "65 × 110 cm (Khung gỗ sồi)",
+        image: "/museum-art-4.jpg",
+        layout: "image-right",
+        category: "exhibition"
     }
 ];
 
+export const FINE_ART_STANDARDS = {
+    tag: "TIÊU CHUẨN NGHỆ THUẬT",
+    title: "Bản quyền & Giám tuyển Lưu trữ",
+    description: "Mỗi tác phẩm trong không gian trưng bày đều đi kèm con dấu triện uy tín của Phan Nguyen Gia Khanh cùng hồ sơ xuất xứ chi tiết, đáp ứng đầy đủ tiêu chuẩn sưu tập bảo tàng quốc tế.",
+    items: [
+        {
+            title: "Chất liệu Thủ công",
+            text: "Giấy Dó ngâm vôi, lụa dệt nguyên chất cùng sắc tố khoáng tự nhiên trường tồn qua nhiều thập kỷ."
+        },
+        {
+            title: "Chứng chỉ Độc bản",
+            text: "Mỗi bức họa gốc kèm chữ ký tác giả và mã niêm phong số hóa trong catalog museum."
+        },
+        {
+            title: "Vận chuyển Nghệ thuật",
+            text: "Đóng gói chuẩn bảo tàng với thùng gỗ chuyên dụng chống sốc và kiểm soát nhiệt độ."
+        }
+    ]
+};
+
 export const FOOTER_DATA = {
     studioInfo: {
-        title: "Atelier Aura",
-        description: "Contemporary classical portfolio and catalog raisonné of Elena Vance. Original works, print editions, and museum-grade archival commissions.",
+        title: "Gika Studio",
+        description: "Contemporary classical portfolio and catalog raisonné of Phan Nguyen Gia Khanh. Original works, print editions, and museum-grade archival commissions.",
         studios: [
-            "KYOTO STUDIO: SHIMOGYO WARD",
+            "GIKA STUDIO: SHIMOGYO WARD",
             "PARIS ATELIER: RUE DE TURENNE, 3E"
         ]
     },
@@ -152,6 +173,6 @@ export const FOOTER_DATA = {
         placeholder: "collector@domain.com",
         links: ["INSTAGRAM", "BEHANCE", "SUBSTACK"]
     },
-    copyright: "© 2024 ATELIER AURA & ELENA VANCE. ALL RIGHTS RESERVED.",
+    copyright: "© 2026 Gika Studio & PHAN NGUYEN GIA KHANH. ALL RIGHTS RESERVED.",
     tagline: "PRESERVING ANALOG TACTILITY IN CONTEMPORARY SPACE"
 };

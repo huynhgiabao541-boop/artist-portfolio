@@ -7,21 +7,25 @@ const Header = () => {
         <header className="site-header">
             <div className="site-container header-inner">
                 {/* Brand Logo */}
-                <Link to="/" className="header-brand">
-                    <div className="brand-icon-box">aa</div>
+                <Link to="/about" className="header-brand">
+                    <div className="brand-icon-box">
+                        {ARTIST_INFO.studio.split(' ').map(w => w[0]).join('').toLowerCase()}
+                    </div>
                     <div className="brand-text">
                         <span className="brand-title">{ARTIST_INFO.studio}</span>
-                        <span className="brand-subtitle">{ARTIST_INFO.substudio}</span>
+                        {ARTIST_INFO.substudio && (
+                            <span className="brand-subtitle">{ARTIST_INFO.substudio}</span>
+                        )}
                     </div>
                 </Link>
 
-                {/* Main Navigation */}
+                {/* Main Navigation: ABOUT stands before MUSEUM */}
                 <nav className="header-nav">
-                    <NavLink exact to="/" className="nav-link" activeClassName="active">
-                        MUSEUM
-                    </NavLink>
                     <NavLink to="/about" className="nav-link" activeClassName="active">
                         ABOUT
+                    </NavLink>
+                    <NavLink to="/museum" className="nav-link" activeClassName="active">
+                        MUSEUM
                     </NavLink>
                     <NavLink to="/contact" className="nav-link" activeClassName="active">
                         CONTACT
