@@ -1,4 +1,5 @@
 import { getAdminAuthHeader } from '../auth/adminAuthService';
+import { prepareImageForUpload } from './imageCompressor';
 
 const rawApiBaseUrl =
   process.env.REACT_APP_API_URL !== undefined
@@ -14,8 +15,9 @@ const API_BASE_URL = rawApiBaseUrl.replace(/\/+$/, '');
  */
 export const uploadMediaImage = async (file, fallbackErrorMessage) => {
   const authHeaders = await getAdminAuthHeader();
+  const readyFile = await prepareImageForUpload(file);
   const formData = new FormData();
-  formData.append('image', file);
+  formData.append('image', readyFile);
 
   const uploadRes = await fetch(`${API_BASE_URL}/api/upload`, {
     method: 'POST',
