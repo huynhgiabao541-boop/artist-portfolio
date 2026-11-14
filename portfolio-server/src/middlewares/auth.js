@@ -24,8 +24,9 @@ function createRequireAdminAuth({ firebaseInitialized, authAdmin }) {
       }
 
       const decoded = await authAdmin.verifyIdToken(token);
+      const expectedAdminUid = process.env.ADMIN_UID || 'skmGpUdNDpVkoX1YUAHfEaPMawZ2';
 
-      if (process.env.ADMIN_UID && decoded.uid !== process.env.ADMIN_UID) {
+      if (decoded.uid !== expectedAdminUid) {
         return res.status(403).json({ error: 'Tài khoản không có quyền Admin (Forbidden)' });
       }
 
