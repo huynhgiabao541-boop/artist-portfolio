@@ -24,6 +24,7 @@ function createApp() {
   app.use(createCorsMiddleware());
   app.use(express.json());
 
+  app.get('/', getHealth);
   app.get('/api/health', getHealth);
   app.post('/api/upload', requireAdminAuth, upload.single('image'), createUploadHandler(s3));
   app.delete('/api/delete', requireAdminAuth, createDeleteHandler(s3));
