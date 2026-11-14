@@ -10,7 +10,7 @@ import Contact from './Routes/Contact'
 const App = () => {
   return (
     <Router>
-      <div className="wrapper">
+      <div className="app-wrapper">
         <Header />
         <Switch>
 

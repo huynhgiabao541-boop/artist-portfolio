@@ -1,37 +1,54 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { SOCIAL_LINKS } from '../data'
+import React from 'react';
+import { NavLink, Link } from 'react-router-dom';
+import { ARTIST_INFO } from '../data';
 
 const Header = () => {
     return (
-        <header>
-            <nav>
-                <div id="nav-left">
-                    <ul>
-                        <li><Link to="/">WORK</Link></li>
-                        <li><Link to="/About">ABOUT</Link></li>
-                        <li><Link to="/Contact">CONTACT</Link></li>
-                    </ul>
+        <header className="site-header">
+            <div className="site-container header-inner">
+                {/* Brand Logo */}
+                <Link to="/" className="header-brand">
+                    <div className="brand-icon-box">aa</div>
+                    <div className="brand-text">
+                        <span className="brand-title">{ARTIST_INFO.studio}</span>
+                        <span className="brand-subtitle">{ARTIST_INFO.substudio}</span>
+                    </div>
+                </Link>
+
+                {/* Main Navigation */}
+                <nav className="header-nav">
+                    <NavLink exact to="/" className="nav-link" activeClassName="active">
+                        MUSEUM
+                    </NavLink>
+                    <NavLink to="/about" className="nav-link" activeClassName="active">
+                        ABOUT
+                    </NavLink>
+                    <NavLink to="/contact" className="nav-link" activeClassName="active">
+                        CONTACT
+                    </NavLink>
+                </nav>
+
+                {/* Right Actions */}
+                <div className="header-actions">
+                    <Link to="/contact" className="btn-inquire">
+                        INQUIRE / AVAILABLE WORKS
+                    </Link>
+
+                    <div className="header-location">
+                        <img 
+                            src={ARTIST_INFO.avatar} 
+                            alt="Elena Vance / Paris & Kyoto" 
+                            className="header-avatar"
+                            onError={(e) => {
+                                e.target.style.display = 'none';
+                            }}
+                        />
+                        <span>{ARTIST_INFO.location}</span>
+                    </div>
                 </div>
-                <div id="nav-center">
-                    <ul>
-                        <li><Link to="/">SOURABH ARYA</Link></li>
-                    </ul>
-                </div>
-                <div id="nav-right">
-                    <ul>
-                        {SOCIAL_LINKS.map(social => (
-                            <li>
-                                <a href={social.link} rel="noopener noreferrer" target="_blank" aria-label={social.name}>
-                                    <i className={social.icon}></i>
-                                </a>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </nav>
+            </div>
         </header>
-    )
-}
+    );
+};
 
 export default Header;
