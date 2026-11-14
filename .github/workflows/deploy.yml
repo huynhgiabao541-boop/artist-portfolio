@@ -1,41 +1,26 @@
-name: Deploy Portfolio (Cloud Run + Firebase Hosting)
+name: Deploy Portfolio (Firebase Hosting + Render)
 
 on:
   push:
     branches:
       - main
 
-env:
-  PROJECT_ID: npgk-portfolio-art
-  REGION: asia-southeast1
-  SERVICE_NAME: portfolio-media-service
-
 jobs:
   deploy-backend:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Authenticate to Google Cloud
-        uses: google-github-actions/auth@v2
-        with:
-          credentials_json: ${{ secrets.GCP_SA_KEY }}
-
-      - name: Deploy Backend to Cloud Run
-        uses: google-github-actions/deploy-cloudrun@v2
-        with:
-          service: ${{ env.SERVICE_NAME }}
-          region: ${{ env.REGION }}
-          source: ./portfolio-server
-          flags: >-
-            --allow-unauthenticated
-            --memory=512Mi
-            --set-env-vars=ADMIN_UID=${{ secrets.ADMIN_UID }},S3_ENDPOINT=${{ secrets.S3_ENDPOINT }},S3_REGION=${{ secrets.S3_REGION }},S3_BUCKET_NAME=${{ secrets.S3_BUCKET_NAME }},S3_ACCESS_KEY=${{ secrets.S3_ACCESS_KEY }},S3_SECRET_KEY=${{ secrets.S3_SECRET_KEY }},S3_PUBLIC_URL=${{ secrets.S3_PUBLIC_URL }},ALLOWED_ORIGIN=${{ secrets.ALLOWED_ORIGIN }}
-            --set-secrets=FIREBASE_SERVICE_ACCOUNT=FIREBASE_SERVICE_ACCOUNT:latest
+      - name: Trigger Render Deploy Hook
+        env:
+          RENDER_DEPLOY_HOOK_URL: ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -n "$RENDER_DEPLOY_HOOK_URL" ]; then
+            curl -fsS -X POST "$RENDER_DEPLOY_HOOK_URL"
+            echo "Triggered Render deployment."
+          else
+            echo "RENDER_DEPLOY_HOOK_URL is not set yet. Skipping backend trigger."
+          fi
 
   deploy-frontend:
-    needs: deploy-backend
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -50,6 +35,8 @@ jobs:
 
       - name: Install & Build Frontend
         working-directory: ./artist-portfolio
+        env:
+          REACT_APP_API_URL: ${{ secrets.REACT_APP_API_URL }}
         run: |
           npm ci
           npm run build
@@ -60,5 +47,4 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_DEPLOY }}
           channelId: live
-          projectId: ${{ env.PROJECT_ID }}
-
+          projectId: npgk-portfolio-art

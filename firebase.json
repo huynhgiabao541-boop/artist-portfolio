@@ -8,13 +8,6 @@
     ],
     "rewrites": [
       {
-        "source": "/api/**",
-        "run": {
-          "serviceId": "portfolio-media-service",
-          "region": "asia-southeast1"
-        }
-      },
-      {
         "source": "**",
         "destination": "/index.html"
       }
