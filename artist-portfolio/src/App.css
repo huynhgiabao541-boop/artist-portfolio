@@ -95,6 +95,7 @@ a {
 .brand-icon-box {
   width: 38px;
   height: 38px;
+  overflow: hidden;
   background-color: #f0ece5;
   border: 1px solid var(--outline-hairline);
   display: flex;

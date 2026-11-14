@@ -9,7 +9,11 @@ const Header = () => {
                 {/* Brand Logo */}
                 <Link to="/about" className="header-brand">
                     <div className="brand-icon-box">
-                        {ARTIST_INFO.studio.split(' ').map(w => w[0]).join('').toLowerCase()}
+                        <img
+                            src={ARTIST_INFO.heroPainting || '/hero-painting.jpg'}
+                            alt={ARTIST_INFO.studio}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                        />
                     </div>
                     <div className="brand-text">
                         <span className="brand-title">{ARTIST_INFO.studio}</span>
