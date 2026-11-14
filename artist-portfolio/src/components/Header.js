@@ -19,7 +19,6 @@ const Header = () => {
     }, []);
 
     const studioName = aboutData.studio || ARTIST_INFO.studio;
-    const locationText = aboutData.location || ARTIST_INFO.location;
     const brandImage = aboutData.heroPainting || ARTIST_INFO.heroPainting || '/hero-painting.jpg';
 
     return (
@@ -57,25 +56,6 @@ const Header = () => {
                         CONTACT
                     </NavLink>
                 </nav>
-
-                {/* Right Actions */}
-                <div className="header-actions">
-                    <Link to="/contact" className="btn-inquire">
-                        INQUIRE / AVAILABLE WORKS
-                    </Link>
-
-                    <div className="header-location">
-                        <img 
-                            src={ARTIST_INFO.avatar} 
-                            alt="Elena Vance / Paris & Kyoto" 
-                            className="header-avatar"
-                            onError={(e) => {
-                                e.target.style.display = 'none';
-                            }}
-                        />
-                        <span>{locationText}</span>
-                    </div>
-                </div>
             </div>
         </header>
     );
