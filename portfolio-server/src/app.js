@@ -14,6 +14,7 @@ const { createUploadHandler, createDeleteHandler } = require('./controllers/medi
  */
 function createApp() {
   const app = express();
+  app.set('trust proxy', 1);
   const firebaseAuth = initFirebaseAuth();
   const s3 = createS3Client();
   const requireAdminAuth = createRequireAdminAuth(firebaseAuth);
