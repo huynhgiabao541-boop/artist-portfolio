@@ -25,13 +25,9 @@ export const extractMediaFields = (media) => ({
 export const buildCreateArtworkPayload = (artworkData, media, createdAt) => ({
   title: artworkData.title.trim(),
   category: artworkData.category || 'water-ink',
-  archiveCode: artworkData.archiveCode || `MÃ LƯU TRỮ: TTMNK / ${new Date().getFullYear()}`,
-  tagLeft: artworkData.tagLeft || 'TÁC PHẨM MỚI',
-  tagRight: artworkData.tagRight || 'BẢN GỐC 1/1',
   description: artworkData.description || '',
   material: artworkData.material || '',
   size: artworkData.size || '',
-  layout: artworkData.layout || 'image-left',
   displayUrl: media.displayUrl,
   displayKey: media.displayKey,
   thumbUrl: media.thumbUrl,
@@ -48,13 +44,9 @@ export const buildUpdateArtworkPayload = (updatedData, updatedAt, media = null) 
   const basePayload = {
     title: updatedData.title,
     category: updatedData.category,
-    archiveCode: updatedData.archiveCode,
-    tagLeft: updatedData.tagLeft,
-    tagRight: updatedData.tagRight,
     description: updatedData.description,
     material: updatedData.material,
     size: updatedData.size,
-    layout: updatedData.layout,
     updatedAt,
   };
 

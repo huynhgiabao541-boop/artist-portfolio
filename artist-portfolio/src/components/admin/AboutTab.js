@@ -164,16 +164,6 @@ const AboutTab = ({
       </div>
 
       <div>
-        <label style={labelStyle}>ĐỊA ĐIỂM HOẠT ĐỘNG (HEADER)</label>
-        <input
-          type="text"
-          value={aboutForm.location || ''}
-          onChange={(e) => setAboutForm({ ...aboutForm, location: e.target.value })}
-          style={inputStyle}
-        />
-      </div>
-
-      <div>
         <label style={labelStyle}>DÒNG NIÊN ĐẠI TUYỂN CHỌN</label>
         <input
           type="text"

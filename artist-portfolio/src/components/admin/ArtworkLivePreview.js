@@ -13,7 +13,6 @@ const PreviewVisualCol = ({ formData, previewUrl }) => (
         justifyContent: 'center',
       }}
     >
-      <div className="archive-code-badge">{formData.archiveCode || 'MÃ LƯU TRỮ: TTMNK / 2024'}</div>
       {previewUrl ? (
         <img
           src={previewUrl}
@@ -32,11 +31,6 @@ const PreviewVisualCol = ({ formData, previewUrl }) => (
 
 const PreviewContentCol = ({ formData, currentCategoryLabel }) => (
   <div className="exhibit-content-col">
-    <div className="exhibit-meta-row">
-      <span className="meta-left">{formData.tagLeft || 'TÁC PHẨM MỚI'}</span>
-      <span className="meta-right">{formData.tagRight || 'BẢN GỐC 1/1'}</span>
-    </div>
-
     <div style={{ marginBottom: '8px' }}>
       <span
         style={{
@@ -122,17 +116,8 @@ const ArtworkLivePreview = ({ formData, previewUrl, currentCategoryLabel }) => {
           border: '1px solid var(--outline-hairline)',
         }}
       >
-        {formData.layout === 'image-left' ? (
-          <>
-            {visual}
-            {content}
-          </>
-        ) : (
-          <>
-            {content}
-            {visual}
-          </>
-        )}
+        {visual}
+        {content}
       </article>
     </div>
   );

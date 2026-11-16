@@ -215,39 +215,6 @@ const MuseumTab = ({
             </div>
 
             <div>
-              <label style={labelStyle}>MÃ LƯU TRỮ ARCHIVE</label>
-              <input
-                type="text"
-                placeholder="MÃ LƯU TRỮ: TTMNK / 2024"
-                value={formData.archiveCode}
-                onChange={(e) => setFormData({ ...formData, archiveCode: e.target.value })}
-                style={inputStyle}
-              />
-            </div>
-
-            <div>
-              <label style={labelStyle}>TAG TRÁI (VÍ DỤ: TÁC PHẨM MỚI)</label>
-              <input
-                type="text"
-                placeholder="TÁC PHẨM MỚI / TIÊU BIỂU"
-                value={formData.tagLeft}
-                onChange={(e) => setFormData({ ...formData, tagLeft: e.target.value })}
-                style={inputStyle}
-              />
-            </div>
-
-            <div>
-              <label style={labelStyle}>TAG PHẢI (VÍ DỤ: BẢN GỐC 1/1)</label>
-              <input
-                type="text"
-                placeholder="BẢN GỐC 1/1 / PRIVATE COLLECTION"
-                value={formData.tagRight}
-                onChange={(e) => setFormData({ ...formData, tagRight: e.target.value })}
-                style={inputStyle}
-              />
-            </div>
-
-            <div>
               <label style={labelStyle}>CHẤT LIỆU</label>
               <input
                 type="text"
@@ -267,69 +234,6 @@ const MuseumTab = ({
                 onChange={(e) => setFormData({ ...formData, size: e.target.value })}
                 style={inputStyle}
               />
-            </div>
-
-            <div>
-              <label style={labelStyle}>BỐ CỤC HIỂN THỊ TRANG CHI TIẾT</label>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-                <button
-                  type="button"
-                  onClick={() => setFormData({ ...formData, layout: 'image-left' })}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '10px',
-                    padding: '0.75rem 1rem',
-                    background:
-                      formData.layout === 'image-left' ? 'var(--surface-low, #f5f3f0)' : '#ffffff',
-                    border:
-                      formData.layout === 'image-left'
-                        ? '2px solid var(--secondary, #c25e3e)'
-                        : '1px solid var(--outline-hairline)',
-                    cursor: 'pointer',
-                    textAlign: 'left',
-                  }}
-                >
-                  <Icons.LayoutLeft />
-                  <div>
-                    <strong style={{ display: 'block', fontSize: '12px', fontFamily: 'var(--font-label)' }}>
-                      Ảnh Bên Trái
-                    </strong>
-                    <span style={{ fontSize: '11px', color: 'var(--on-surface-variant)' }}>
-                      Nội dung bên Phải
-                    </span>
-                  </div>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => setFormData({ ...formData, layout: 'image-right' })}
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '10px',
-                    padding: '0.75rem 1rem',
-                    background:
-                      formData.layout === 'image-right' ? 'var(--surface-low, #f5f3f0)' : '#ffffff',
-                    border:
-                      formData.layout === 'image-right'
-                        ? '2px solid var(--secondary, #c25e3e)'
-                        : '1px solid var(--outline-hairline)',
-                    cursor: 'pointer',
-                    textAlign: 'left',
-                  }}
-                >
-                  <Icons.LayoutRight />
-                  <div>
-                    <strong style={{ display: 'block', fontSize: '12px', fontFamily: 'var(--font-label)' }}>
-                      Nội Dung Trái
-                    </strong>
-                    <span style={{ fontSize: '11px', color: 'var(--on-surface-variant)' }}>
-                      Ảnh bên Phải
-                    </span>
-                  </div>
-                </button>
-              </div>
             </div>
           </div>
 
@@ -475,12 +379,6 @@ const MuseumTab = ({
                         }}
                       >
                         {formatCategoryLabel(art.category)}
-                      </span>
-                      <span style={{ fontSize: '11px', color: 'var(--on-surface-variant)' }}>
-                        {art.archiveCode || 'No Archive Code'}
-                      </span>
-                      <span style={{ fontSize: '11px', color: 'var(--secondary)', fontWeight: '600' }}>
-                        [{art.layout === 'image-right' ? 'Nội dung trái - Ảnh phải' : 'Ảnh trái - Nội dung phải'}]
                       </span>
                     </div>
                     <h4 style={{ margin: '0 0 4px', fontSize: '1.1rem', fontFamily: 'var(--font-heading)' }}>

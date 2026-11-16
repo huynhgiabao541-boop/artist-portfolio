@@ -4,3 +4,4 @@ if (process.env.NODE_ENV !== 'production') {
 const { createApp } = require('../src/app');
 
 module.exports = createApp();
+

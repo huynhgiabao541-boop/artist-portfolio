@@ -10,13 +10,9 @@ import { DEFAULT_CATEGORIES, slugifyCategoryKey } from '../components/admin/admi
 const createInitialFormData = (defaultCategory = 'water-ink') => ({
   title: '',
   category: defaultCategory,
-  archiveCode: '',
-  tagLeft: 'TÁC PHẨM MỚI',
-  tagRight: 'BẢN GỐC 1/1',
   description: '',
   material: '',
   size: '',
-  layout: 'image-left',
 });
 
 /**
@@ -100,13 +96,9 @@ export const useAdminMuseum = (showToast) => {
     setFormData({
       title: art.title || '',
       category: art.category || 'water-ink',
-      archiveCode: art.archiveCode || '',
-      tagLeft: art.tagLeft || 'TÁC PHẨM MỚI',
-      tagRight: art.tagRight || 'BẢN GỐC 1/1',
       description: art.description || '',
       material: art.material || '',
       size: art.size || '',
-      layout: art.layout || 'image-left',
     });
 
     if (art.category && !customCategories.some((c) => c.key === art.category)) {

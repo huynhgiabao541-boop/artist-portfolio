@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLanguage } from '../../context/LanguageContext';
 
 const DOSSIER_BUTTON_STYLE = {
   display: 'inline-flex',
@@ -20,7 +21,6 @@ const DOSSIER_BUTTON_STYLE = {
 const ExhibitVisualCol = ({ item, imgSrc }) => (
   <div className="exhibit-visual-col">
     <div className="exhibit-image-frame">
-      <div className="archive-code-badge">{item.archiveCode}</div>
       <img
         src={imgSrc}
         alt={item.title}
@@ -32,23 +32,18 @@ const ExhibitVisualCol = ({ item, imgSrc }) => (
   </div>
 );
 
-const ExhibitContentCol = ({ item, isExpanded, onToggleDossier }) => (
+const ExhibitContentCol = ({ item, isExpanded, onToggleDossier, t }) => (
   <div className="exhibit-content-col">
-    <div className="exhibit-meta-row">
-      <span className="meta-left">{item.tagLeft}</span>
-      <span className="meta-right">{item.tagRight}</span>
-    </div>
-
     <h2 className="exhibit-title">{item.title}</h2>
     <p className="exhibit-desc">{item.description}</p>
 
     <div className="exhibit-specs-box">
       <div className="spec-row">
-        <span className="spec-label">CHẤT LIỆU:</span>
+        <span className="spec-label">{t('MEDIUM:', 'CHẤT LIỆU:')}</span>
         <span className="spec-val">{item.material}</span>
       </div>
       <div className="spec-row">
-        <span className="spec-label">KÍCH THƯỚC:</span>
+        <span className="spec-label">{t('DIMENSIONS:', 'KÍCH THƯỚC:')}</span>
         <span className="spec-val">{item.size}</span>
       </div>
     </div>
@@ -59,7 +54,7 @@ const ExhibitContentCol = ({ item, isExpanded, onToggleDossier }) => (
         onClick={() => onToggleDossier(item.id)}
         style={DOSSIER_BUTTON_STYLE}
       >
-        <span>HỒ SƠ GIÁM ĐỊNH</span>
+        <span>{t('CURATORIAL DOSSIER', 'HỒ SƠ GIÁM ĐỊNH')}</span>
         <svg
           width="12"
           height="14"
@@ -90,17 +85,19 @@ const ExhibitContentCol = ({ item, isExpanded, onToggleDossier }) => (
           className="curator-inquire-btn"
           style={{ marginLeft: '10px', textDecoration: 'none', display: 'inline-block' }}
         >
-          ẢNH GỐC HD
+          {t('ORIGINAL HD', 'ẢNH GỐC HD')}
         </a>
       )}
     </div>
 
     {isExpanded && (
       <div className="expanded-dossier-panel">
-        <h4>GIÁM TUYỂN & XUẤT XỨ</h4>
+        <h4>{t('CURATION & PROVENANCE', 'GIÁM TUYỂN & XUẤT XỨ')}</h4>
         <p>
-          Tác phẩm được số hóa lưu trữ chuẩn bảo tàng. Tình trạng lưu giữ hoàn hảo dưới nhiệt độ
-          phòng tiêu chuẩn.
+          {t(
+            'Digitally archived to museum standards. Preserved in optimal condition under standard gallery climate control.',
+            'Tác phẩm được số hóa lưu trữ chuẩn bảo tàng. Tình trạng lưu giữ hoàn hảo dưới nhiệt độ phòng tiêu chuẩn.'
+          )}
         </p>
       </div>
     )}
@@ -111,6 +108,7 @@ const ExhibitContentCol = ({ item, isExpanded, onToggleDossier }) => (
  * Thẻ trưng bày tác phẩm hỗ trợ đảo bố cục ảnh trái/phải.
  */
 const ExhibitCard = ({ item, isExpanded, onToggleDossier }) => {
+  const { t } = useLanguage();
   const isImageLeft = item.layout !== 'image-right';
   const imgSrc = item.thumbUrl || item.displayUrl || item.image;
 
@@ -120,6 +118,7 @@ const ExhibitCard = ({ item, isExpanded, onToggleDossier }) => {
       item={item}
       isExpanded={isExpanded}
       onToggleDossier={onToggleDossier}
+      t={t}
     />
   );
 

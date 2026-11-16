@@ -46,3 +46,4 @@ export const prepareImageForUpload = async (file) => {
   const safeName = (file.name || 'artwork').replace(/\.[^.]+$/, `.${ext}`);
   return new File([blob], safeName, { type: outputMime });
 };
+

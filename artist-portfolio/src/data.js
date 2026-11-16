@@ -75,54 +75,38 @@ export const MUSEUM_CATEGORIES = [
 export const MUSEUM_EXHIBITS = [
     {
         id: 1,
-        archiveCode: "MÃ LƯU TRỮ: TTMNK / 2024",
-        tagLeft: "TÁC PHẨM TIÊU BIỂU",
-        tagRight: "BẢN GỐC 1/1",
         title: "DÒNG THỜI GIAN — 2024",
         description: "Khám phá sự chuyển biến của thời gian và không gian qua những nét vẽ tinh tế, hòa quyện giữa chất liệu truyền thống và tư duy thị giác đương đại.",
         material: "Màu nước, Gold leaf & Lụa tơ",
         size: "50 × 120 cm (Khung gỗ)",
         image: "/museum-art-1.jpg",
-        layout: "image-left",
         category: "water-ink"
     },
     {
         id: 2,
-        archiveCode: "MÃ LƯU TRỮ: TTMNK / 2023",
-        tagLeft: "MINH HỌA Ý NIỆM",
-        tagRight: "GÌN GIỮ TRUYỀN THỐNG",
         title: "VỌNG CẢNH — 2023",
         description: "Sắc độ đất nung và vệt loang sơn thủy, tái hiện dòng vang an yên giữa dòng thời gian.",
         material: "Khoáng màu & Mực nho giấy Dó",
         size: "68 × 98 cm (Như gốc khổ)",
         image: "/museum-art-2.jpg",
-        layout: "image-right",
         category: "concept"
     },
     {
         id: 3,
-        archiveCode: "MÃ LƯU TRỮ: TTMNK / 2024",
-        tagLeft: "KỸ HỌA ĐÔ THỊ DI SẢN",
-        tagRight: "PHIÊN BẢN LƯU TRỮ GIỚI HẠN",
         title: "KÝ ỨC ĐÔ THỊ — 2024",
         description: "Nét ký họa đan xen lớp mái ngói phố cổ, khắc họa nhịp thở hoài niệm và sức sống bền bỉ.",
         material: "Mực sắt & Màu nước Winsor",
         size: "70 × 100 cm (Giấy Arches 300gsm)",
         image: "/museum-art-3.jpg",
-        layout: "image-left",
         category: "water-ink"
     },
     {
         id: 4,
-        archiveCode: "MÃ LƯU TRỮ: TTMNK / 2025",
-        tagLeft: "TÁC PHẨM MỚI NHẤT",
-        tagRight: "TRANH LỤA ĐƯƠNG ĐẠI",
         title: "TĨNH LẶNG BAN MAI — 2025",
         description: "Dùng áo dài liệu không gian sớm mai trên nền lụa tơ tằm, mang nét đẹp chiêm định Á Đông.",
         material: "Màu khoáng trên lụa tơ tằm Bảo Lộc",
         size: "65 × 110 cm (Khung gỗ sồi)",
         image: "/museum-art-4.jpg",
-        layout: "image-right",
         category: "exhibition"
     }
 ];
@@ -155,17 +139,6 @@ export const FOOTER_DATA = {
             "GIKA STUDIO: SHIMOGYO WARD",
             "PARIS ATELIER: RUE DE TURENNE, 3E"
         ]
-    },
-    representation: {
-        title: "REPRESENTATION & CURATORIAL",
-        galleries: [
-            "Gallery Éther Paris",
-            "Galerie Nichido Kyoto"
-        ],
-        permanentArchive: {
-            title: "PERMANENT ARCHIVE",
-            code: "Catalog Raisonné ISSN 2841-8930"
-        }
     },
     gazette: {
         title: "STUDIO GAZETTE & PRIVATE VIEWS",

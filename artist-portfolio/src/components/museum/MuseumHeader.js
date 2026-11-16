@@ -1,27 +1,35 @@
 import React from 'react';
-import { MUSEUM_HEADER } from '../../data';
+import { useLanguage } from '../../context/LanguageContext';
 
 /**
- * Phần tiêu đề và các huy hiệu của trang Bảo tàng.
+ * Phần tiêu đề của trang Bảo tàng (tối giản, không kèm mô tả và badge).
  */
-const MuseumHeader = () => (
-  <section className="museum-header-section">
-    <div className="museum-header-left">
-      <span className="section-tag">{MUSEUM_HEADER.breadcrumb}</span>
-      <h1 className="museum-main-title">{MUSEUM_HEADER.title}</h1>
-      <p className="museum-desc">{MUSEUM_HEADER.description}</p>
-    </div>
+const MuseumHeader = () => {
+  const { t } = useLanguage();
 
-    <div className="museum-header-badges">
-      {MUSEUM_HEADER.badges.map((badge, idx) => (
-        <div key={idx} className="museum-badge-pill">
-          <span className="badge-dot"></span>
-          <span>{badge}</span>
-        </div>
-      ))}
-    </div>
-  </section>
-);
+  return (
+    <section
+      className="museum-header-section"
+      style={{
+        borderBottom: 'none',
+        marginBottom: 0,
+        paddingBottom: 0,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        textAlign: 'center',
+      }}
+    >
+      <div className="museum-header-left" style={{ maxWidth: '100%' }}>
+        <span className="section-tag" style={{ display: 'inline-block', marginBottom: '0.4rem' }}>
+          {t('EXHIBITION CATALOG • ARCHIVE', 'EXHIBITION CATALOG • LƯU TRỮ')}
+        </span>
+        <h1 className="museum-main-title" style={{ margin: 0 }}>
+          {t('Museum', 'Tác phẩm')}
+        </h1>
+      </div>
+    </section>
+  );
+};
 
 export default MuseumHeader;
-
