@@ -244,10 +244,13 @@
 }
 
 @keyframes statusPulse {
-  0%, 100% {
+
+  0%,
+  100% {
     transform: scale(1);
     box-shadow: 0 0 6px rgba(16, 185, 129, 0.6);
   }
+
   50% {
     transform: scale(1.2);
     box-shadow: 0 0 12px rgba(16, 185, 129, 0.9);
@@ -372,7 +375,7 @@
     grid-template-columns: 1fr;
     gap: 1.75rem;
   }
-  
+
   .contact-form-card {
     padding: 2rem 1.5rem;
   }
